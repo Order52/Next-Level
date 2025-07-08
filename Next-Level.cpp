@@ -672,13 +672,34 @@ public:
         }
     }
 };
+
 int main() {
     RenderWindow window(VideoMode(800, 600), "Ultimate Game Collection");
     Font font;
-    if (!font.loadFromFile("C:/Windows/Fonts/arial.ttf")) {
+    
+    // Try multiple common font locations for cross-platform compatibility
+    bool fontLoaded = false;
+    vector<string> fontPaths = {
+        "C:/Windows/Fonts/arial.ttf",                                    // Windows
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",              // Linux (Ubuntu/Debian)
+        "/usr/share/fonts/TTF/arial.ttf",                               // Linux (some distros)
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf", // Linux (Liberation fonts)
+        "/System/Library/Fonts/Arial.ttf",                              // macOS
+        "arial.ttf"                                                      // Local file fallback
+    };
+    
+    for (const string& path : fontPaths) {
+        if (font.loadFromFile(path)) {
+            fontLoaded = true;
+            break;
+        }
+    }
+    
+    if (!fontLoaded) {
         cerr << "Error loading font!" << endl;
         return 1;
     }
+    
     GameMenu menu(font);
     menu.Show(window);
     return 0;
