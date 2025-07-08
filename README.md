@@ -43,11 +43,9 @@ g++ -std=c++17 -o GameCollection main.cpp -lsfml-graphics -lsfml-window -lsfml-s
 ```
 
 Windows (MinGW)
-
     Install SFML and ensure sfml-xxx.dll are available
-
     Use the following compile command (adjust path as needed):
-    ```
+```
 g++ -std=c++17 -IC:/SFML/include -LC:/SFML/lib -o GameCollection.exe main.cpp -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 ```
 
