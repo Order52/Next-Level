@@ -30,7 +30,7 @@ A C++ desktop application built with SFML that includes four mini-games in a cle
 
 - **C++17 or newer**
 - **SFML 2.5+** (Graphics, Window, Audio, System)
-- Compatible with Windows and Linux (tested on CachyOS)
+- Compatible with Windows and Linux
 
 ## Build Instructions
 
