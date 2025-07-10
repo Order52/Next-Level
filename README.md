@@ -22,10 +22,6 @@ A C++ desktop application built with SFML that includes four mini-games in a cle
 - Color-coded outcomes and animations
 - Modular class-based game design
 
-## Screenshots
-
-> (Add screenshots of the menu and games if available)
-
 ## Requirements
 
 - **C++17 or newer**
